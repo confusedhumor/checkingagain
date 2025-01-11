@@ -1,0 +1,394 @@
+<html lang="en" translate="no" data-dpr="1" dir="ltr" style="font-size: 37px;">
+
+<head>
+   
+
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml"
+    href="https://ossimg.tirangaagent.com/Tiranga/other/h5setting_20231017190406lyb3.ico">
+  <meta name="google" content="notranslate">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="manifest">
+  <title id="app-title"></title>
+  <script src="/js/app.js"></script>
+  <link rel="modulepreload" crossorigin="" href="/assets/js/modules-6b0d6df4.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/js/native/index-7b2487e5.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/js/en-93cdab10.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/js/rus-ecb14220.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/js/vi-40bd560a.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/js/id-24cc3835.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/js/hd-c5b1d7e8.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/js/tha-330057b2.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/js/md-02b1fc1c.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/js/bra-1f3ea623.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/js/my-80d37f62.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/js/bdt-d8f19d0c.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/js/zh-3589f8b3.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/js/pak-9f46abf2.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/js/ar-64903102.js">
+  <link rel="modulepreload" crossorigin="" href="/assets/js/page-activity-d3ba61d1.js">
+  <link rel="stylesheet" href="/assets/css/modules-b642e9bc.css">
+  <link rel="stylesheet" href="/assets/css/page-activity-4fe5c6bf.css">
+  <link rel="stylesheet" href="/assets/css/index-2c2fee84.css">
+
+
+  <link rel="stylesheet" href="/assets/css/page-home-522c97b9.css">
+
+
+  <link rel="stylesheet" href="/assets/css/page-login-49518e3f.css">
+  <link rel="stylesheet" href="/assets/css/page-main-284c07ba.css">
+  <link rel="stylesheet" href="/assets/css/page-promotion-14ce89d7.css">
+  <link rel="stylesheet" href="/assets/css/index-06e0e9c4.css">
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
+    integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="/lib/moment.min.js"></script>
+</head>
+
+<body style="font-size: 12px;" class="">
+ 
+  <div id="app" data-v-app="">
+    
+    <div data-v-10d1559c="" class="TeamReport__C" style="--f13b4d11-currentFontFamily: 'Roboto', 'Inter', sans-serif;">
+      <div data-v-12a80a3e="" data-v-10d1559c="" class="navbar white">
+        <div data-v-12a80a3e="" class="navbar-fixed">
+          <div data-v-12a80a3e="" class="navbar__content">
+            <div data-v-12a80a3e="" class="navbar__content-left"><i data-v-12a80a3e=""
+                class="van-badge__wrapper van-icon van-icon-arrow-left"
+                onclick="history.back()"><!----><!----><!----></i></div>
+            <div data-v-12a80a3e="" class="navbar__content-center"><!--v-if-->
+              <div data-v-12a80a3e="" class="navbar__content-title">Commission Details</div>
+            </div>
+            <div data-v-12a80a3e="" class="navbar__content-right"></div>
+          </div>
+        </div>
+      </div>
+      <div data-v-10d1559c="" class="TeamReport__C-head" style="height: 1.1rem !important;">
+        <div data-v-10d1559c="" class="TeamReport__C-head-fixed">
+          
+          <div data-v-10d1559c="" class="TeamReport__C-head-line2">
+            
+            <div data-v-10d1559c=""><input type="date" id="date_picker" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <style>
+        #date_picker {
+          width: 100%;
+          height: 100%;
+          border: none;
+          background: transparent;
+          color: #000000;
+          font-size: 14px;
+          text-align: center;
+          outline: none;
+          box-shadow: none;
+        }
+
+        #pagination {
+          display: flex;
+          justify-content: center;
+          margin-top: 20px;
+        }
+
+        .page-btn {
+          margin: 0 5px;
+          padding: 5px 10px;
+          cursor: pointer;
+          border: none;
+          background: linear-gradient(90deg, #d9ad82 0%, #2b3270 100%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          line-height: 1;
+          padding: 7px 14px;
+          border-radius: 5px;
+          margin-bottom: 20px;
+        }
+
+        .page-btn.active {
+          font-weight: bold;
+          text-decoration: underline;
+        }
+
+        .page-btn:disabled {
+          cursor: not-allowed;
+          opacity: 0.5;
+        }
+      </style>
+
+
+
+
+      <div data-v-10d1559c="" class="TeamReport__C-body">
+        
+        <div data-v-cbab7763="" data-v-10d1559c="" class="infiniteScroll" id="refresh75c9941b45134352b41dd7f3899f0642">
+          <div data-v-cbab7763="" class="infiniteScroll__loading">
+          </div>
+          <div data-v-cbab7763="">No more</div>
+
+        </div>
+      </div><!----><!----><!----><!---->
+    </div><!--online custom service-->
+    <div id="bottom_slider_tier_picker_overlay" class="van-overlay" role="button" tabindex="0" data-v-10d1559c=""
+      style="z-index: 2003; display: none"></div>
+    
+    <div class="customer" id="customerId"
+      style="--f13b4d11-currentFontFamily: 'Roboto', 'Inter', sans-serif; --f6a705e1-currentFontFamily: bahnschrift;">
+      <img class="" data-origin="/assets/png/icon_sevice-8a1f5628.png" src="/assets/png/icon_sevice-8a1f5628.png">
+    </div>
+
+  </div>
+
+
+
+  <div data-v-app=""><!--teleport start--><!--teleport end--></div><!---->
+  <div role="dialog" tabindex="0" class="van-popup van-popup--center van-toast van-toast--middle van-toast--success"
+    style="z-index: 2001; display: none;"><i
+      class="van-badge__wrapper van-icon van-icon-success van-toast__icon"><!----><!----><!----></i>
+    <div class="van-toast__text">Copy successful</div><!---->
+  </div>
+</body>
+
+<script>
+  const debounce = (func, wait) => {
+    let timeout;
+    return function (...args) {
+      const context = this;
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(context, args), wait);
+    };
+  };
+
+  let current = $("#tier_picker_btn .default").text();
+  let searchMember = "";
+  let startDate = moment().subtract(1, "days").startOf("day").valueOf();
+  let totalCommission = 0; // Variable to store the total commission
+
+  $(document).ready(function () {
+    $("#date_picker").val(moment(startDate).format("YYYY-MM-DD"));
+    // Add total commission display element below date picker
+    $("#date_picker_root").after('<div id="total_commission" style="margin-top: 10px;">Total Commission: 0</div>');
+  });
+
+  let level = "All";
+  let page = 1;
+  let limit = 999;
+  let totalPages = 0;
+  let loading = false;
+
+  let swiper = new Swiper(".van-picker-column", {
+    slidesPerView: 5,
+    direction: "vertical",
+    centeredSlides: true,
+    clickable: true,
+  });
+  $("#tier_picker_btn").click(function () {
+    $("body").addClass("van-overflow-hidden");
+    $("#bottom_slider_tier_picker_overlay").fadeIn();
+    $("#bottom_slider_tier_picker").fadeIn();
+
+    current = $("#tier_picker_btn .default").text();
+
+    const index = $(
+      "#bottom_slider_tier_picker .van-picker-column__item .van-ellipsis",
+    )
+      .toArray()
+      .findIndex((item) => {
+        return $(item).text() === current;
+      });
+    swiper.slideTo(index, 0);
+  });
+
+  $("#bottom_slider_tier_picker .van-picker-column__item").click(
+    function () {
+      const index = $("#bottom_slider_tier_picker .van-picker-column__item")
+        .toArray()
+        .findIndex((item) => {
+          return (
+            $(item).find(".van-ellipsis").text() ===
+            $(this).find(".van-ellipsis").text()
+          );
+        });
+      swiper.slideTo(index, 500, true);
+    },
+  );
+
+  $(".cancel").click(function () {
+    $("body").removeClass("van-overflow-hidden");
+    $("#bottom_slider_tier_picker_overlay").fadeOut();
+    $("#bottom_slider_tier_picker").fadeOut();
+  });
+
+  $(".confirm").click(function () {
+    $("#tier_picker_btn .default").text(
+      $(".swiper-slide-active .van-ellipsis").text(),
+    );
+    current = $(".swiper-slide-active .van-ellipsis").text();
+
+    level = current !== "All" ? current.replace("Tier ", "") : "All";
+    $(".ar-loading-view").fadeIn();
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+    initAttendanceBonus(startDate, searchMember, level, page);
+    $("body").removeClass("van-overflow-hidden");
+    $("#bottom_slider_tier_picker_overlay").fadeOut();
+    $("#bottom_slider_tier_picker").fadeOut();
+  });
+
+  function formateT(params) {
+    let result = params < 10 ? "0" + params : params;
+    return result;
+  }
+  function timerJoin(params = "") {
+    let date = "";
+    if (params) {
+      date = new Date(Number(params));
+    } else {
+      date = new Date();
+    }
+    let years = formateT(date.getFullYear());
+    let months = formateT(date.getMonth() + 1);
+    let days = formateT(date.getDate());
+
+    let hours = formateT(date.getHours());
+    let minutes = formateT(date.getMinutes());
+    let seconds = formateT(date.getSeconds());
+    return days + "/" + months + "/" + years;
+  }
+
+  let data = [];
+  const initAttendanceBonus = async (
+    startDate,
+    search,
+    level,
+    page = 1,
+  ) => {
+    if (loading) return;
+    try {
+      loading = true;
+      const response = await axios.get(
+        `/api/subordinates/details?startDate=${startDate}&id=${search}&level=${level}&page=${page}&limit=${limit}`,
+      );
+
+      if (response.data.status === true) {
+        const responseData = response.data.data;
+        const { currentPage, totalPages: total } = response.data.meta;
+        totalPages = total;
+        if (responseData.usersByLevels.length !== 0) {
+          if (page === 1) data = responseData.usersByLevels;
+          else data.push(...responseData.usersByLevels);
+
+          // Calculate total commission
+          totalCommission = data.reduce((sum, item) => sum + parseFloat(item.total_commission), 0);
+          $("#total_commission").text(`Total Commission: ${totalCommission.toFixed(2)}`);
+
+        } else {
+          $("#pagination").hide(); // Hide pagination if no data
+        }
+
+        $(".header-container .num")
+          .eq(0)
+          .text(responseData.subordinatesRechargeQuantity);
+        $(".header-container .num")
+          .eq(1)
+          .text(responseData.subordinatesRechargeAmount);
+        $(".header-container .num")
+          .eq(2)
+          .text(responseData.subordinatesWithBettingCount);
+        $(".header-container .num")
+          .eq(3)
+          .text(responseData.subordinatesBettingAmount);
+        $(".header-container .num")
+          .eq(4)
+          .text(responseData.subordinatesWithFirstDepositCount);
+        $(".header-container .num")
+          .eq(5)
+          .text(responseData.subordinatesWithFirstDepositAmount);
+
+        const listHtml = data
+          .map((item) => {
+            return `
+                    <div data-v-10d1559c="" class="TeamReport__C-body-item">
+                       <div data-v-10d1559c="" class="TeamReport__C-body-item-head">
+                          <div data-v-10d1559c="" class="title">UID:${item.id_user}</div>
+                          
+                       </div>
+                       <div data-v-10d1559c="" class="TeamReport__C-body-item-detail">
+                          
+                          <div data-v-10d1559c="" class="TeamReport__C-body-item-detail-commission">Commission<span data-v-10d1559c="">${item.total_commission}</span></div>
+                          
+                       </div>
+                    </div>`;
+          })
+          .join("");
+
+        $(".infiniteScroll").html(listHtml);
+      }
+      loading = false;
+    } catch (error) {
+      loading = false;
+      console.log(error);
+    }
+
+    $(".ar-loading-view").fadeOut();
+  };
+  $(".ar-loading-view").fadeIn();
+  initAttendanceBonus(startDate, searchMember, level);
+
+  let previousScrollTop = 0;
+  $(window).on("scroll", function () {
+    const currentScrollTop = $(this).scrollTop();
+
+    if (currentScrollTop >= previousScrollTop) {
+      if (
+        $(window).scrollTop() + $(window).height() >=
+        $(document).height() - 100
+      ) {
+        if (!loading && page < totalPages) {
+          console.log("hit)");
+          page++;
+          initAttendanceBonus(startDate, searchMember, level, page);
+        }
+      }
+    }
+    previousScrollTop = currentScrollTop;
+  });
+
+  $("#date_picker").val(timerJoin(startDate));
+
+  $("#date_picker").on("change", function () {
+    startDate = moment(this.value).valueOf();
+    $(".ar-loading-view").fadeIn();
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+    initAttendanceBonus(startDate, searchMember, level);
+  });
+
+  $("#date_picker_root").click(function () {
+    $("#date_picker").click();
+  });
+
+  $("#level_selector").click(function () {
+    console.log("click");
+  });
+
+  function searchTable() {
+    searchMember = $(this).val().toLowerCase().trim();
+  }
+
+  $("#search").on("keyup", searchTable);
+  $(".searchIcon").on("click", function () {
+    $(".ar-loading-view").fadeIn();
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+    initAttendanceBonus(startDate, searchMember, level);
+  });
+</script>
+
+
+</html>

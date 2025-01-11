@@ -1,0 +1,390 @@
+<html lang="en" translate="no" data-dpr="1" dir="ltr" style="font-size: 37px;">
+
+<head>
+   
+
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml"
+    href="https://ossimg.tirangaagent.com/Tiranga/other/h5setting_20231017190406lyb3.ico">
+  <meta name="google" content="notranslate">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="manifest">
+  <title id="app-title"></title>
+  <script src="/js/app.js"></script>
+  <link rel="stylesheet" href="/assets/css/modules-b642e9bc.css">
+  <link rel="stylesheet" href="/assets/css/page-activity-4fe5c6bf.css">
+  <link rel="stylesheet" href="/assets/css/index-2c2fee84.css">
+
+
+  <link rel="stylesheet" href="/assets/css/page-home-522c97b9.css">
+
+
+  <link rel="stylesheet" href="/assets/css/page-login-49518e3f.css">
+  <link rel="stylesheet" href="/assets/css/page-main-284c07ba.css">
+  <link rel="stylesheet" href="/assets/css/page-promotion-14ce89d7.css">
+  <link rel="stylesheet" href="/assets/css/index-06e0e9c4.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
+    integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<style>
+ /* Ensure the container for the tabs is styled properly */
+#van-tabs {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #f5f5f5; /* Light gray background */
+    border-bottom: 1px solid #ddd; /* Divider line between tabs and content */
+}
+
+/* Style for each tab */
+.van-tab {
+    padding: 10px 20px;
+    cursor: pointer; /* Make it clear that the tab is clickable */
+    font-weight: 400;
+    color: #000000; /* Default text color */
+    background-color: #fff; /* White background for the tabs */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect to show interactivity */
+.van-tab:hover {
+    background-color: var(--main_gradient-color) !important; /* Custom gradient when hovered */
+}
+
+/* Active tab styling to differentiate the selected tab */
+.van-tab-active {
+    background: var(--main_gradient-color) !important; /* Main gradient color for active tab */
+    color: white; /* White text for the active tab */
+}
+
+/* Style the data list container */
+#van-list {
+    margin-top: 0px;
+    padding: 20px;
+    background-color: #fff; /* White background for the data list */
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    min-height: 100px; /* Ensures there is space even before data is rendered */
+}
+
+/* Style each data item */
+.item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.item:last-child {
+    border-bottom: none; /* No border on the last item */
+}
+
+/* Additional styling for text */
+.money {
+    font-size: 16px;
+    font-weight: bold;
+    color: #007bff; /* Blue text */
+}
+
+.state {
+    font-size: 12px;
+    color: #999; /* Light gray for date/time */
+}
+
+
+</style>
+<body style="font-size: 12px;">
+ 
+
+  <div id="app" data-v-app="">
+    <div data-v-647954c7="" class="ar-loading-view"
+      style="display: none; --f13b4d11-currentFontFamily: 'Roboto', 'Inter', sans-serif;">
+      <div data-v-647954c7="" class="loading-wrapper"><!-- <VanLoading /> -->
+        <div data-v-647954c7="" class="loading-animat"><svg xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200" width="200" height="200"
+            preserveAspectRatio="xMidYMid meet"
+            style="width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px); content-visibility: visible;">
+            <defs>
+              <clipPath id="__lottie_element_2">
+                <rect width="200" height="200" x="0" y="0"></rect>
+              </clipPath>
+              <image xlink:href="/logo_loading.png">
+              </image>
+              <image
+                xlink:href="data:image/png;base64,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">
+              </image>
+            </defs>
+            <g clip-path="url(#__lottie_element_2)">
+              <g class="ai"
+                transform="matrix(0.9657086730003357,0.25962817668914795,-0.25962817668914795,0.9657086730003357,29.391952514648438,-22.53368377685547)"
+                opacity="1" style="display: block;">
+                <image width="200px" height="200px" preserveAspectRatio="xMidYMid slice"
+                  xlink:href="data:image/png;base64,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">
+                </image>
+              </g>
+              <g class="png"
+                transform="matrix(0.9167199730873108,0,0,0.9167199730873108,29.87091827392578,81.66560363769531)"
+                opacity="1" style="display: block;">
+                <image width="163px" height="60px" preserveAspectRatio="xMidYMid slice" xlink:href="/logo_loading.png">
+                </image>
+              </g>
+            </g>
+          </svg></div>
+        <div data-v-647954c7="" class="com__box" style="display: none;"><!-- loading -->
+          <div class="loading" data-v-647954c7="">
+            <div class="shape shape-1" data-v-647954c7=""></div>
+            <div class="shape shape-2" data-v-647954c7=""></div>
+            <div class="shape shape-3" data-v-647954c7=""></div>
+            <div class="shape shape-4" data-v-647954c7=""></div>
+          </div><!-- 说明：组件名 -->
+        </div><!-- <div class="animation"></div> -->
+      </div>
+      <div data-v-647954c7="" class="skeleton-wrapper" style="display: none;">
+        <div data-v-647954c7="" class="van-skeleton van-skeleton--animate"><!---->
+          <div class="van-skeleton__content"><!---->
+            <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+            <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+            <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+            <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+            <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+            <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+            <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+            <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+            <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+            <div class="van-skeleton-paragraph" style="width: 60%;"></div>
+          </div>
+        </div>
+        <div data-v-647954c7="" class="van-skeleton van-skeleton--animate">
+          <div class="van-skeleton-avatar van-skeleton-avatar--round"></div>
+          <div class="van-skeleton__content">
+            <h3 class="van-skeleton-title"></h3>
+            <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+            <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+            <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+            <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+            <div class="van-skeleton-paragraph" style="width: 60%;"></div>
+          </div>
+        </div>
+        <div data-v-647954c7="" class="van-skeleton van-skeleton--animate"><!---->
+          <div class="van-skeleton__content">
+            <h3 class="van-skeleton-title"></h3>
+            <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+            <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+            <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+            <div class="van-skeleton-paragraph" style="width: 100%;"></div>
+            <div class="van-skeleton-paragraph" style="width: 60%;"></div>
+          </div>
+        </div>
+      </div>
+    </div><!--v-if-->
+    <div data-v-221aa0df="" class="subordinate__container"
+      style="--f13b4d11-currentFontFamily: 'Roboto', 'Inter', sans-serif;">
+      <div data-v-12a80a3e="" data-v-221aa0df="" class="navbar">
+        <div data-v-12a80a3e="" class="navbar-fixed">
+          <div data-v-12a80a3e="" class="navbar__content">
+            <div data-v-12a80a3e="" class="navbar__content-left" onclick="history.back()"><i data-v-12a80a3e=""
+                class="van-badge__wrapper van-icon van-icon-arrow-left"><!----><!----><!----></i></div>
+            <div data-v-12a80a3e="" class="navbar__content-center"><!--v-if-->
+              <div data-v-12a80a3e="" class="navbar__content-title">New subordinates</div>
+            </div>
+            <div data-v-12a80a3e="" class="navbar__content-right"></div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    <div id="van-tabs">
+      <div class="van-tab" id="tab-today" style="cursor: pointer;">Today</div>
+      <div class="van-tab" id="tab-yesterday" style="cursor: pointer;">Yesterday</div>
+      
+      <div class="van-tab" id="tab-this-month" style="cursor: pointer;">This Month</div>
+  </div>
+  
+  <div id="van-list">Loading data...</div>
+
+
+    
+    <!--online custom service-->
+    <div class="customer" id="customerId"
+      style="--f13b4d11-currentFontFamily: 'Roboto', 'Inter', sans-serif; --f6a705e1-currentFontFamily: bahnschrift;">
+      <img class="" data-origin="/assets/png/icon_sevice-8a1f5628.png" src="/assets/png/icon_sevice-8a1f5628.png">
+    </div>
+
+  </div>
+
+
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+ // Function to add leading zeros for single-digit numbers (e.g., '1' becomes '01')
+function formateT(params) {
+    return (params < 10) ? "0" + params : params;
+}
+
+function timerJoin(params = '', addHours = 0) {
+    let date = '';
+    if (params) {
+        date = new Date(Number(params)); // Convert epoch time to Date
+    } else {
+        date = new Date(); // Use current time if no timestamp provided
+    }
+
+    date.setHours(date.getHours() + addHours);
+
+    let years = formateT(date.getFullYear());
+    let months = formateT(date.getMonth() + 1);
+    let days = formateT(date.getDate());
+
+    let hours = date.getHours() % 12;
+    hours = hours === 0 ? 12 : hours;
+    let ampm = date.getHours() < 12 ? "AM" : "PM";
+
+    let minutes = formateT(date.getMinutes());
+    let seconds = formateT(date.getSeconds());
+
+    return `${years}-${months}-${days} ${hours}:${minutes}:${seconds} ${ampm}`;
+}
+
+// Filter data for today, yesterday, last 7 days, or last 30 days (this month alternative)
+function filterDataByDate(datas, filterType) {
+    const now = new Date();
+    
+    console.log("Current date:", now);
+
+    return datas.filter(data => {
+        const dataDate = new Date(Number(data.time)); // Convert epoch to Date object
+
+        // Log each timestamp and its corresponding date
+        console.log("Raw timestamp:", data.time);
+        console.log("Converted date from timestamp:", dataDate);
+
+        if (filterType === 'today') {
+            return dataDate.toDateString() === now.toDateString();
+        } else if (filterType === 'yesterday') {
+            const yesterday = new Date(now);
+            yesterday.setDate(now.getDate() - 1);
+            return dataDate.toDateString() === yesterday.toDateString();
+        
+        } else if (filterType === 'this-month') {
+            // Define "This Month" as the last 30 days instead of the current calendar month
+            const thirtyDaysAgo = new Date(now);
+            thirtyDaysAgo.setDate(now.getDate() - 30);
+            console.log("Checking if date is within the last 30 days:", dataDate >= thirtyDaysAgo);
+            return dataDate >= thirtyDaysAgo;
+        }
+    });
+}
+
+// Render data into the DOM
+function MemRender(datas) {
+    let html = '';
+
+    // If no data is available, show a message
+    if (!datas || datas.length === 0) {
+        html = '<div>No data available for this selection.</div>';
+    } else {
+        // Loop through each data item and create HTML content
+        datas.forEach(data => {
+            html += `
+
+
+            <div data-v-221aa0df="" class="subordinate__container-content__item ar-1px-b">
+      <div data-v-221aa0df="">
+        <span data-v-221aa0df="">${data.phone}</span><span data-v-221aa0df="">UID:${data.id_user}</span>
+      </div>
+      <div data-v-221aa0df="">
+        <span data-v-221aa0df="">Direct subordinates</span><span data-v-221aa0df="">${timerJoin(data.time)}</span>
+      </div>
+    </div>
+                
+            `;
+        });
+    }
+
+    // Log the generated HTML for debugging
+    console.log("Generated HTML for van-list:", html);
+    
+    // Inject the generated HTML into the #van-list container
+    $('#van-list').html(html);
+}
+
+// Load data and render based on the selected tab
+function loadDataAndRender() {
+    $.ajax({
+        type: "GET",
+        url: "/api/webapi/myTeam",
+        dataType: "json",
+        success: function (response) {
+            const data = response.mem;
+
+            // Log the fetched data for debugging
+            console.log("Fetched data:", data);
+
+            // Initially render the data for 'Today'
+            MemRender(filterDataByDate(data, 'today'));
+
+            // Set up tab click events to filter data by date
+            $('#tab-today').on('click', function () {
+                console.log("Tab clicked: Today");
+                MemRender(filterDataByDate(data, 'today'));
+            });
+
+            $('#tab-yesterday').on('click', function () {
+                console.log("Tab clicked: Yesterday");
+                MemRender(filterDataByDate(data, 'yesterday'));
+            });
+
+           
+
+            $('#tab-this-month').on('click', function () {
+                console.log("Tab clicked: Last 30 Days");
+                MemRender(filterDataByDate(data, 'this-month'));
+            });
+        },
+        error: function (error) {
+            console.error("Error fetching data:", error);
+            $('#van-list').html('<div>Failed to load data.</div>');
+        }
+    });
+}
+
+// Initialize the page and load data when ready
+$(document).ready(function () {
+    loadDataAndRender();
+});
+
+$(document).ready(function () {
+    // Handle the tab click event
+    $('.van-tab').on('click', function () {
+        // Remove active class from all tabs
+        $('.van-tab').removeClass('van-tab-active');
+        
+        // Add active class to the clicked tab
+        $(this).addClass('van-tab-active');
+
+        // Render the data based on the selected tab (add your data logic here)
+        const selectedTab = $(this).attr('id');
+        console.log("Tab selected:", selectedTab);
+
+        // Example: You can add logic here to call your filtering functions based on the selected tab
+        // Example: MemRender(filterDataByDate(data, selectedTab));
+    });
+
+    // Optionally set the first tab as active on page load
+    $('.van-tab').first().addClass('van-tab-active');
+});
+
+
+</script>
+</html>

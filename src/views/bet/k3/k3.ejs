@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html translate="no" data-dpr="1" style="font-size: 37.52px;">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="robots" content="noindex,nofollow">
+  <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+  <title id="app-title"></title>
+  <script src="/js/app.js"></script>
+  
+  <!--<script src="/js/block.js"></script>-->
+  <link rel="shortcut icon" href="/images/bitbug_favicon.ico" type="image/x-icon">
+  <link href="css/app.21328c5b.css" rel="stylesheet">
+  <link rel="stylesheet" href="/k3/css/chunk-9ca7d0dc.0f968705.css">
+  <link rel="stylesheet" href="/k3/css/chunk-f7aaa136.30c67545.css">
+  <link rel="stylesheet" href="/k3/css/chunk-vendors.b521b44f.css">
+  <link rel="stylesheet" href="/asset/css/page-home-38001cf0.css">
+  <link rel="stylesheet" href="/asset/css/modules-b642e9bc.css">
+  
+  <link rel="stylesheet" href="/assets/css/page-home-522c97b9.css">
+  <link rel="stylesheet" href="/assets/css/page-login-49518e3f.css">
+  
+  <link rel="stylesheet" href="/assets/css/index-06e0e9c4.css">
+  <link rel="stylesheet" href="/assets/css/page-home-522c97b9.css">
+  <link rel="stylesheet" href="/assets/css/page-home-a4807077.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"
+      integrity="sha512-JSCFHhKDilTRRXe9ak/FJ28dcpOJxzQaCd3Xg8MyF6XFjODhy/YMCM8HW0TFDckNHWUewW+kfvhin43hKtJxAw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"
+      integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H"
+      crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      background-color: #090909;
+      padding: 0;
+      margin: 0;
+    }
+
+    .block-click {
+      pointer-events: none;
+    }
+
+    .d-none {
+      display: none !important;
+    }
+    .issueName2 {
+    background-color: var(--main-color);
+    padding: 0.3rem;
+    width: 1rem;
+    border-radius: 0.13rem;
+    color: #ffffff;
+    }
+  </style>
+</head>
+
+<body style="font-size: 12px;">
+  <div id="app">
+    <div data-v-03b808c2="" class="mian game" style="padding-top:0rem !important">
+      <div data-v-5d71c3fd="" class="WinGo__C" style="--f13b4d11-currentFontFamily: 'Roboto', 'Inter', sans-serif;">
+        <div data-v-12a80a3e="" data-v-5d71c3fd="" class="navbar main">
+           <div data-v-12a80a3e="" class="navbar-fixed">
+              <div data-v-12a80a3e="" class="navbar__content">
+                 <div data-v-12a80a3e="" class="navbar__content-left" onclick="location.href = '/home'"><i data-v-12a80a3e=""
+                       class="van-badge__wrapper van-icon van-icon-arrow-left"><!----><!----><!----></i></div>
+                 <div data-v-12a80a3e="" class="navbar__content-center">
+                    <div data-v-12a80a3e="" class="headLogo"
+                       style="background-image: url(&quot;/h5setting_202308141709544lm1.png&quot;);">
+                    </div>
+                    <div data-v-12a80a3e="" class="navbar__content-title"></div>
+                 </div>
+                 <div data-v-12a80a3e="" class="navbar__content-right">
+                    <div data-v-5d71c3fd="" class="WinGo__C-head-more">
+                       <div data-v-5d71c3fd="" onclick="location.href = '/support'"></div>
+                       <div data-v-5d71c3fd="" class="" id="audio_button"></div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div><!-- 钱包余额 -->
+      <%- include('element/gameHead.ejs') -%>
+
+
+
+
+
+        <%- include('element/betting.ejs') -%>
+          <%- include('element/listOrder.ejs') -%>
+            <%- include('element/popupJoin.ejs') -%>
+              <%- include('element/quytac.ejs') -%>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"
+    integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H"
+    crossorigin="anonymous"></script>
+  <script src="/k3/js/main.js"></script>
+  <script src="/k3/js/chuck.js"></script>
+</body>
+
+</html>
